@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mobile Apps | Axiomate Tech Services</title>
+  <meta name="description" content="Cross-platform mobile applications with native performance." />
+  <link rel="icon" type="image/png" href="/images/logo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div id="preloader"><div class="preloader-inner"><div class="preloader-logo-text">AXIOMATE</div><div class="preloader-bar"><div class="preloader-progress"></div></div></div></div>
+  <canvas id="global-canvas"></canvas>
+  <div id="cursor-glow"></div><div id="cursor-dot"></div>
+
+  <nav id="navbar" class="navbar">
+    <div class="nav-container">
+      <a href="/index.html" class="nav-logo">
+        <img src="/axiomate_logo_1777524479592.png" alt="Axiomate" class="logo-img" />
+        <span class="logo-text">Axiomate</span>
+      </a>
+      <div class="nav-links">
+        <a href="/index.html#hero" class="nav-link">Home</a>
+        <a href="/index.html#services" class="nav-link active">Services</a>
+        <a href="/index.html#about" class="nav-link">About</a>
+        <a href="/index.html#contact" class="nav-link">Contact</a>
+      </div>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <a href="/index.html#contact" class="nav-cta magnetic-btn"><span>Get Started</span></a>
+    </div>
+  </nav>
+
+  <section class="section" style="padding-top: 180px; min-height: 70vh;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag reveal-up">// Service</span>
+        <h2 class="section-title reveal-up">Mobile <span class="gradient-text">Apps</span></h2>
+        <p class="section-desc reveal-up">Cross-platform mobile applications with native performance.</p>
+      </div>
+      <div class="about-grid" style="grid-template-columns: 1fr; max-width: 800px; margin: 0 auto; background: var(--bg-glass-card); border: 1px solid var(--border-glass); border-radius: var(--radius-lg); padding: 40px; backdrop-filter: blur(var(--card-blur));">
+        <p class="about-text" style="color: var(--text-primary);">We build stunning, responsive, and blazing-fast mobile applications for iOS and Android. By utilizing cross-platform frameworks like React Native and Flutter, we deliver native-like performance while significantly reducing development time and costs.</p>
+        <div class="about-features" style="grid-template-columns: 1fr 1fr; margin-top: 30px;">
+          <div class="about-feature"><div class="feature-icon-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div><span>iOS & Android</span></div>
+          <div class="about-feature"><div class="feature-icon-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div><span>React Native & Flutter</span></div>
+          <div class="about-feature"><div class="feature-icon-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div><span>App Store Deployment</span></div>
+          <div class="about-feature"><div class="feature-icon-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div><span>Mobile UI/UX Design</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="footer" class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand"><img src="/axiomate_logo_1777524479592.png" alt="Axiomate" class="footer-logo-img" /><span class="footer-logo-text">Axiomate</span><p class="footer-tagline">Engineering Tomorrow's Technology</p></div>
+        <div class="footer-links-group"><h4>Services</h4><a href="web-development.html">Web Development</a><a href="ai-ml.html">AI & ML</a><a href="mobile-apps.html">Mobile Apps</a><a href="cloud-devops.html">Cloud & DevOps</a></div>
+        <div class="footer-links-group"><h4>Company</h4><a href="/index.html#about">About Us</a><a href="/index.html#process">Our Process</a><a href="/index.html#contact">Contact</a></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 Axiomate Tech Services. All rights reserved.</p></div>
+    </div>
+  </footer>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
