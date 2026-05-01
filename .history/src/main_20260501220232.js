@@ -10,13 +10,11 @@ requestAnimationFrame(raf);
 // ===== PRELOADER — SCATTERED GLITCH ASSEMBLE =====
 // Set scatter variables immediately so CSS animation uses them on first paint
 document.querySelectorAll('.pl-letter').forEach(letter => {
-  const sx = (Math.random() - 0.5) * 800;  // slightly wider random X offset
-  const sy = (Math.random() - 0.5) * 500;  // random Y offset
-  const sz = (Math.random() - 0.5) * 600;  // random Z offset for 3D depth
-  const sr = (Math.random() - 0.5) * 120;  // random rotation
+  const sx = (Math.random() - 0.5) * 600;  // random X offset
+  const sy = (Math.random() - 0.5) * 400;  // random Y offset
+  const sr = (Math.random() - 0.5) * 90;   // random rotation
   letter.style.setProperty('--sx', sx + 'px');
   letter.style.setProperty('--sy', sy + 'px');
-  letter.style.setProperty('--sz', sz + 'px');
   letter.style.setProperty('--sr', sr + 'deg');
 });
 
@@ -40,14 +38,14 @@ if (textEl) {
   }, 500);
 }
 
-// Add assembled glow after letters land (CSS animation ends ~2.4s)
+// Add assembled glow after letters land (CSS animation ends ~2.2s)
 setTimeout(() => {
   const logo = document.querySelector('.preloader-logo');
   if (logo) logo.classList.add('assembled');
-}, 2400);
+}, 2200);
 
 // Dismiss preloader safely after load, ensuring min display time
-const minPreloaderTime = 2800;
+const minPreloaderTime = 2500;
 const startTime = Date.now();
 
 window.addEventListener('load', () => {
