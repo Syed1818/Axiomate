@@ -1,21 +1,35 @@
 import Lenis from 'lenis';
 import { initGlobalScene } from './three-scene.js';
 import { initAnimations } from './animations.js';
+import { initPreloaderScene } from './preloader-scene.js';
+
+// Start preloader 3D immediately
+initPreloaderScene();
 
 // ===== SMOOTH SCROLL =====
 const lenis = new Lenis({ duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
 function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
 requestAnimationFrame(raf);
 
-// ===== PRELOADER TERMINAL BOOT =====
+// ===== PRELOADER — SCATTERED GLITCH ASSEMBLE =====
 window.addEventListener('load', () => {
+  // Scatter each letter to a random position
+  document.querySelectorAll('.pl-letter').forEach(letter => {
+    const sx = (Math.random() - 0.5) * 600;  // random X offset
+    const sy = (Math.random() - 0.5) * 400;  // random Y offset
+    const sr = (Math.random() - 0.5) * 90;   // random rotation
+    letter.style.setProperty('--sx', sx + 'px');
+    letter.style.setProperty('--sy', sy + 'px');
+    letter.style.setProperty('--sr', sr + 'deg');
+  });
+
+  // Terminal text cycling
   const textEl = document.querySelector('.typing-text');
   const messages = [
-    "Establishing secure connection...",
-    "Initializing neural pathways...",
     "Loading 3D environment...",
-    "Calibrating quantum nodes...",
-    "System Ready."
+    "Establishing neural pathways...",
+    "Calibrating particle systems...",
+    "System online."
   ];
   let i = 0;
   if (textEl) {
@@ -26,13 +40,20 @@ window.addEventListener('load', () => {
       } else {
         clearInterval(interval);
       }
-    }, 400);
+    }, 500);
   }
 
+  // Add assembled glow after letters land
+  setTimeout(() => {
+    const logo = document.querySelector('.preloader-logo');
+    if (logo) logo.classList.add('assembled');
+  }, 1800);
+
+  // Dismiss preloader
   setTimeout(() => {
     const preloader = document.getElementById('preloader');
     if (preloader) preloader.classList.add('hidden');
-  }, 2500);
+  }, 3000);
 });
 
 // ===== INIT =====
@@ -259,7 +280,7 @@ function initTiltCards() {
 // ===== MAGNETIC BUTTONS =====
 function initMagneticButtons() {
   if (window.innerWidth < 768) return;
-  document.querySelectorAll('.magnetic-btn').forEach(btn => {
+  document.querySelectorAll('.magnetic-btn, .nav-link').forEach(btn => {
     btn.addEventListener('mousemove', (e) => {
       const rect = btn.getBoundingClientRect();
       const x = (e.clientX - rect.left - rect.width / 2) * 0.3;

@@ -14,13 +14,11 @@ export function initAnimations() {
 }
 
 function initHero() {
-  const tl = gsap.timeline({ delay: 2.4 });
-  tl.from('.hero-badge', { opacity: 0, y: 30, duration: 0.7, ease: 'power3.out' })
-    .from('.char-wrap', { y: '120%', opacity: 0, duration: 1, ease: 'power4.out', stagger: 0.18 }, '-=0.3')
-    .from('.hero-subtitle', { opacity: 0, y: 25, duration: 0.7, ease: 'power3.out' }, '-=0.4')
-    .from('.hero-buttons .btn', { opacity: 0, y: 25, scale: 0.9, duration: 0.6, stagger: 0.12, ease: 'back.out(1.7)' }, '-=0.3')
-    .from('.hero-stats-row', { opacity: 0, y: 20, duration: 0.7, ease: 'power3.out' }, '-=0.2')
-    .from('.scroll-indicator', { opacity: 0, duration: 0.8 }, '-=0.2');
+  const tl = gsap.timeline({ delay: 0.2 });
+  tl.from('.cmd-palette', { opacity: 0, y: 20, duration: 0.8, ease: 'power3.out' })
+    .from('.title-line', { y: '100%', opacity: 0, duration: 1, ease: 'power4.out', stagger: 0.1 }, '-=0.4')
+    .from('.hero-subtitle', { opacity: 0, y: 20, duration: 0.8, ease: 'power3.out' }, '-=0.6')
+    .from('.hero-buttons .btn', { opacity: 0, y: 20, duration: 0.8, stagger: 0.1, ease: 'power3.out' }, '-=0.5');
 }
 
 function initNavScroll() {
@@ -47,14 +45,14 @@ function setActive(id) {
 function initScrollReveals() {
   gsap.utils.toArray('.reveal-up').forEach(el => {
     gsap.from(el, {
-      scrollTrigger: { trigger: el, start: 'top 88%' },
-      opacity: 0, y: 40, duration: 0.8, ease: 'power3.out',
+      scrollTrigger: { trigger: el, start: 'top 85%' },
+      opacity: 0, y: 40, duration: 1, ease: 'power3.out',
     });
   });
   gsap.utils.toArray('.about-text, .contact-desc, .contact-info').forEach(el => {
     gsap.from(el, {
-      scrollTrigger: { trigger: el, start: 'top 88%' },
-      opacity: 0, y: 30, duration: 0.7, ease: 'power3.out',
+      scrollTrigger: { trigger: el, start: 'top 85%' },
+      opacity: 0, y: 20, duration: 1, ease: 'power3.out',
     });
   });
 }
@@ -62,17 +60,18 @@ function initScrollReveals() {
 function initServiceCards() {
   gsap.utils.toArray('.service-card').forEach((card, i) => {
     gsap.from(card, {
-      scrollTrigger: { trigger: card, start: 'top 90%' },
-      opacity: 0, y: 60, scale: 0.95, duration: 0.7, delay: i * 0.08, ease: 'power3.out',
+      scrollTrigger: { trigger: card, start: 'top 85%' },
+      opacity: 0, y: 40, duration: 1, delay: i * 0.05, ease: 'power4.out',
     });
   });
 }
 
 function initProcessCards() {
-  gsap.utils.toArray('.process-card').forEach((card, i) => {
-    gsap.from(card, {
-      scrollTrigger: { trigger: card, start: 'top 88%' },
-      opacity: 0, y: 50, duration: 0.6, delay: i * 0.1, ease: 'power3.out',
+  gsap.utils.toArray('.timeline-item').forEach((item, i) => {
+    gsap.from(item, {
+      scrollTrigger: { trigger: item, start: 'top 85%' },
+      opacity: 0, x: item.classList.contains('right-align') ? 50 : -50,
+      duration: 0.8, ease: 'power3.out',
     });
   });
 }
@@ -81,7 +80,7 @@ function initTestimonials() {
   gsap.utils.toArray('.testimonial-card').forEach((card, i) => {
     gsap.from(card, {
       scrollTrigger: { trigger: card, start: 'top 88%' },
-      opacity: 0, y: 40, duration: 0.6, delay: i * 0.12, ease: 'power3.out',
+      opacity: 0, scale: 0.8, rotationZ: i % 2 === 0 ? -5 : 5, duration: 0.8, delay: i * 0.15, ease: 'back.out(1.2)',
     });
   });
 }

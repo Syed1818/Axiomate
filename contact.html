@@ -8,7 +8,7 @@
   <meta name="description" content="Tell us about your project." />
   <link rel="icon" type="image/png" href="/images/logo.png" />
   <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="/style.css" />
 </head>
@@ -16,10 +16,15 @@
 <body>
   <div id="preloader">
     <div class="preloader-inner">
-      <div class="preloader-logo-text">AXIOMATE</div>
-      <div class="preloader-bar">
-        <div class="preloader-progress"></div>
+      <canvas id="pl-canvas"></canvas>
+      <div class="preloader-rings"><div class="pl-ring pl-ring-1"></div><div class="pl-ring pl-ring-2"></div><div class="pl-ring pl-ring-3"></div></div>
+      <div class="preloader-logo" aria-label="Axiomate">
+        <span class="pl-letter" style="--i:0">A</span><span class="pl-letter" style="--i:1">X</span><span class="pl-letter" style="--i:2">I</span><span class="pl-letter" style="--i:3">O</span><span class="pl-letter" style="--i:4">M</span><span class="pl-letter" style="--i:5">A</span><span class="pl-letter" style="--i:6">T</span><span class="pl-letter" style="--i:7">E</span>
+        <div class="pl-scan-line"></div>
       </div>
+      <div class="preloader-tagline"><span class="pl-tagline-text">Engineering Tomorrow</span></div>
+      <div class="preloader-bar"><div class="preloader-progress"></div></div>
+      <p class="preloader-text"><span class="typing-text">Initializing systems</span><span class="typing-cursor">|</span></p>
     </div>
   </div>
   <canvas id="global-canvas"></canvas>
@@ -47,6 +52,9 @@
         </svg>
       </button>
       <a href="/contact.html" class="nav-cta magnetic-btn"><span>Get Started</span></a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
 
