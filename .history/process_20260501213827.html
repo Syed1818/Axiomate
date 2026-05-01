@@ -11,28 +11,16 @@
 </head>
 <body>
   <div id="preloader">
-    <div class="pl-cinematic-bar top"></div>
-    <div class="pl-cinematic-bar bottom"></div>
     <div class="preloader-inner">
-      <!-- Intro Entry Button -->
-      <div id="pl-intro">
-        <button id="pl-enter-btn" class="magnetic-btn"><span>INITIALIZE SYSTEM</span></button>
+      <canvas id="pl-canvas"></canvas>
+      <div class="preloader-rings"><div class="pl-ring pl-ring-1"></div><div class="pl-ring pl-ring-2"></div><div class="pl-ring pl-ring-3"></div></div>
+      <div class="preloader-logo" aria-label="Axiomate">
+        <span class="pl-letter" style="--i:0">A</span><span class="pl-letter" style="--i:1">X</span><span class="pl-letter" style="--i:2">I</span><span class="pl-letter" style="--i:3">O</span><span class="pl-letter" style="--i:4">M</span><span class="pl-letter" style="--i:5">A</span><span class="pl-letter" style="--i:6">T</span><span class="pl-letter" style="--i:7">E</span>
+        <div class="pl-scan-line"></div>
       </div>
-      
-      <!-- Hacker Boot Screen -->
-      <div id="pl-boot" class="hidden">
-        <canvas id="matrix-canvas"></canvas>
-        <div class="terminal-popup">
-          <div class="terminal-header">
-            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-            <span class="title">root@axiomate:~</span>
-          </div>
-          <div class="terminal-body">
-            <div id="terminal-output"></div>
-            <span class="terminal-cursor">_</span>
-          </div>
-        </div>
-      </div>
+      <div class="preloader-tagline"><span class="pl-tagline-text">Engineering Tomorrow</span></div>
+      <div class="preloader-bar"><div class="preloader-progress"></div></div>
+      <p class="preloader-text"><span class="typing-text">Initializing systems</span><span class="typing-cursor">|</span></p>
     </div>
   </div>
   <canvas id="global-canvas"></canvas>
@@ -44,7 +32,7 @@
         <img src="/axiomate_logo_1777524479592.png" alt="Axiomate" class="logo-img" />
         <span class="logo-text">Axiomate</span>
       </a>
-      <div class="nav-links" id="nav-links">
+      <div class="nav-links">
         <a href="/index.html" class="nav-link">Home</a>
         <a href="/index.html#services" class="nav-link">Services</a>
         <a href="/about.html" class="nav-link">About</a>

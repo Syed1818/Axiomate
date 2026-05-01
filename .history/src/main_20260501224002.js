@@ -1,5 +1,6 @@
 import Lenis from 'lenis';
 import { initGlobalScene } from './three-scene.js';
+import { initAnimations } from './animations.js';
 import { initAnimations, cleanupAnimations } from './animations.js';
 
 // ===== SMOOTH SCROLL =====
@@ -43,6 +44,10 @@ function startMatrixEffect(canvas) {
   }
   draw();
   
+  window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  });
   if (!canvas.dataset.resizeBound) {
     window.addEventListener('resize', () => {
       canvas.width = window.innerWidth;

@@ -13,10 +13,6 @@ export function initAnimations() {
   initContactForm();
 }
 
-export function cleanupAnimations() {
-  ScrollTrigger.getAll().forEach(t => t.kill());
-}
-
 function initHero() {
   const tl = gsap.timeline({ delay: 0.2 });
   tl.from('.cmd-palette', { opacity: 0, y: 20, duration: 0.8, ease: 'power3.out' })
