@@ -16,7 +16,7 @@ function startMatrixEffect(canvas) {
   canvas.height = window.innerHeight;
   
   const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*<>[]{}";
-  const fontSize = window.innerWidth < 768 ? 12 : 16;
+  const fontSize = 16;
   const columns = Math.floor(canvas.width / fontSize) + 1;
   const drops = Array(columns).fill(1);
 

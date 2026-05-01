@@ -303,27 +303,6 @@ ul, ol { list-style: none; }
 
 .typing-cursor { color: var(--accent-cyan); animation: status-blink-anim 1s step-end infinite; }
 
-/* Mobile Responsiveness for Preloader */
-@media (max-width: 768px) {
-  #pl-enter-btn {
-    padding: 14px 24px;
-    font-size: 0.9rem;
-    letter-spacing: 2px;
-  }
-  .terminal-popup {
-    width: 95%;
-  }
-  .terminal-header {
-    padding: 10px 12px;
-  }
-  .terminal-header .dot { width: 10px; height: 10px; }
-  .terminal-body {
-    padding: 16px;
-    font-size: 0.75rem;
-    min-height: 220px;
-  }
-}
-
 /* ===== GLOBAL 3D CANVAS ===== */
 #global-canvas {
   position: fixed; inset: 0; width: 100%; height: 100%;
