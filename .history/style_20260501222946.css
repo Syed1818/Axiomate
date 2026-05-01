@@ -358,7 +358,7 @@ ul, ol { list-style: none; }
   max-width: 1200px; margin: 0 auto; padding: 0 24px;
   display: flex; align-items: center; justify-content: space-between;
 }
-.nav-logo { display: flex; align-items: center; gap: 10px; z-index: 10; position: relative; }
+.nav-logo { display: flex; align-items: center; gap: 10px; z-index: 10; }
 .logo-img { width: 36px; height: 36px; object-fit: contain; filter: grayscale(1) brightness(10); transition: filter var(--transition); }
 .footer-logo-img { filter: grayscale(1) brightness(10); transition: filter var(--transition); }
 [data-theme="light"] .logo-img,
@@ -383,7 +383,6 @@ ul, ol { list-style: none; }
   color: var(--accent-cyan); transition: var(--transition);
   backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
   cursor: pointer;
-  position: relative; z-index: 10;
 }
 .theme-toggle:hover { border-color: var(--accent-cyan); box-shadow: var(--glow-blue); }
 .icon-sun { display: none; }
@@ -396,7 +395,7 @@ ul, ol { list-style: none; }
   box-shadow: var(--glow-blue);
 }
 .nav-cta:hover { transform: translateY(-2px); box-shadow: var(--glow-strong); }
-.nav-toggle { display: none; flex-direction: column; gap: 5px; z-index: 10; position: relative; }
+.nav-toggle { display: none; flex-direction: column; gap: 5px; z-index: 10; }
 .nav-toggle span {
   width: 24px; height: 2px; background: var(--text-primary);
   border-radius: 2px; transition: var(--transition);
