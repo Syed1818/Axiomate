@@ -311,6 +311,8 @@ ul, ol { list-style: none; }
 
 /* Post-assembly glow pulse */
 .preloader-logo.assembled .pl-letter {
+  opacity: 1;
+  transform: translate(0, 0) rotate(0deg) scale(1);
   animation: pl-glow-pulse 2s ease-in-out infinite alternate;
   animation-delay: calc(var(--i) * 0.08s);
 }
@@ -1100,4 +1102,3 @@ ul, ol { list-style: none; }
     transparent 40%
   );
 }
-

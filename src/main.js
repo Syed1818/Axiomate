@@ -12,48 +12,54 @@ function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
 requestAnimationFrame(raf);
 
 // ===== PRELOADER — SCATTERED GLITCH ASSEMBLE =====
+// Set scatter variables immediately so CSS animation uses them on first paint
+document.querySelectorAll('.pl-letter').forEach(letter => {
+  const sx = (Math.random() - 0.5) * 600;  // random X offset
+  const sy = (Math.random() - 0.5) * 400;  // random Y offset
+  const sr = (Math.random() - 0.5) * 90;   // random rotation
+  letter.style.setProperty('--sx', sx + 'px');
+  letter.style.setProperty('--sy', sy + 'px');
+  letter.style.setProperty('--sr', sr + 'deg');
+});
+
+// Terminal text cycling
+const textEl = document.querySelector('.typing-text');
+const messages = [
+  "Loading 3D environment...",
+  "Establishing neural pathways...",
+  "Calibrating particle systems...",
+  "System online."
+];
+let msgIndex = 0;
+if (textEl) {
+  const interval = setInterval(() => {
+    if (msgIndex < messages.length) {
+      textEl.textContent = messages[msgIndex];
+      msgIndex++;
+    } else {
+      clearInterval(interval);
+    }
+  }, 500);
+}
+
+// Add assembled glow after letters land (CSS animation ends ~2.2s)
+setTimeout(() => {
+  const logo = document.querySelector('.preloader-logo');
+  if (logo) logo.classList.add('assembled');
+}, 2200);
+
+// Dismiss preloader safely after load, ensuring min display time
+const minPreloaderTime = 2500;
+const startTime = Date.now();
+
 window.addEventListener('load', () => {
-  // Scatter each letter to a random position
-  document.querySelectorAll('.pl-letter').forEach(letter => {
-    const sx = (Math.random() - 0.5) * 600;  // random X offset
-    const sy = (Math.random() - 0.5) * 400;  // random Y offset
-    const sr = (Math.random() - 0.5) * 90;   // random rotation
-    letter.style.setProperty('--sx', sx + 'px');
-    letter.style.setProperty('--sy', sy + 'px');
-    letter.style.setProperty('--sr', sr + 'deg');
-  });
-
-  // Terminal text cycling
-  const textEl = document.querySelector('.typing-text');
-  const messages = [
-    "Loading 3D environment...",
-    "Establishing neural pathways...",
-    "Calibrating particle systems...",
-    "System online."
-  ];
-  let i = 0;
-  if (textEl) {
-    const interval = setInterval(() => {
-      if (i < messages.length) {
-        textEl.textContent = messages[i];
-        i++;
-      } else {
-        clearInterval(interval);
-      }
-    }, 500);
-  }
-
-  // Add assembled glow after letters land
-  setTimeout(() => {
-    const logo = document.querySelector('.preloader-logo');
-    if (logo) logo.classList.add('assembled');
-  }, 1800);
-
-  // Dismiss preloader
+  const elapsed = Date.now() - startTime;
+  const remaining = Math.max(0, minPreloaderTime - elapsed);
+  
   setTimeout(() => {
     const preloader = document.getElementById('preloader');
     if (preloader) preloader.classList.add('hidden');
-  }, 3000);
+  }, remaining);
 });
 
 // ===== INIT =====
