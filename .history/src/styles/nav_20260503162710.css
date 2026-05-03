@@ -1,0 +1,43 @@
+/* 
+ * Move your .navbar and related layout styles from layout.css into this file.
+ * By separating nav specific styling, your CSS architecture becomes cleaner.
+ * Example:
+ * .navbar { position: fixed; ... } 
+ */
+ 
+/* ===== NAVBAR ===== */
+.navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 16px 0; background: transparent; transition: var(--transition); border-bottom: 1px solid transparent;}
+.navbar.scrolled { padding: 10px 0; background: rgba(0, 0, 0, 0.92); border-bottom-color: var(--border-glass); }
+.nav-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; }
+.nav-logo { display: flex; align-items: center; gap: 10px; z-index: 10; position: relative; }
+.logo-img { width: 36px; height: 36px; object-fit: contain;  transition: filter var(--transition); }
+.logo-text { font-size: 1.3rem; font-weight: 700; color: var(--text-primary); }
+.nav-links { display: flex; gap: 32px; }
+.nav-link { font-size: 0.9rem; font-weight: 500; color: var(--text-secondary); position: relative; transition: color var(--transition); }
+.nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--accent-cyan); transition: width var(--transition); }
+.nav-link:hover, .nav-link.active { color: var(--text-primary); }
+.nav-link:hover::after, .nav-link.active::after { width: 100%; }
+.theme-toggle {
+  width: 38px; height: 38px; border-radius: 50%; background: var(--bg-glass); border: 1px solid var(--border-glass);
+  display: flex; align-items: center; justify-content: center; color: var(--accent-cyan); transition: var(--transition);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); cursor: pointer; position: relative; z-index: 10;
+}
+.theme-toggle:hover { border-color: var(--accent-cyan); box-shadow: var(--glow-blue); }
+.icon-sun { display: none; }
+.nav-cta {
+  font-size: 0.85rem; font-weight: 600; padding: 10px 24px; background: var(--accent-gradient); color: #fff;
+  border-radius: var(--radius-xl); transition: var(--transition); box-shadow: var(--glow-blue);
+}
+.nav-cta:hover { transform: translateY(-2px); box-shadow: var(--glow-strong); }
+.nav-toggle { display: none; flex-direction: column; gap: 5px; z-index: 10; position: relative; }
+.nav-toggle span { width: 24px; height: 2px; background: var(--text-primary); border-radius: 2px; transition: var(--transition); }
+.nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.nav-toggle.active span:nth-child(2) { opacity: 0; }
+.nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+@media (max-width: 768px) {
+  .nav-toggle { display: flex; }
+  .nav-links { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.97); flex-direction: column; align-items: center; justify-content: center; gap: 28px; opacity: 0; visibility: hidden; transition: var(--transition); }
+  .nav-links.open { opacity: 1; visibility: visible; }
+  .nav-link { font-size: 1.4rem; }
+  .nav-cta { display: none; }
+}

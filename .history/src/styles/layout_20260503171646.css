@@ -1,0 +1,31 @@
+/* ===== PRELOADER ===== */
+#preloader {
+  position: fixed; inset: 0; z-index: 9999; background: transparent;
+  display: flex; align-items: center; justify-content: center; transition: visibility 0s linear 2s;
+}
+#preloader::before {
+  content: ''; position: absolute; inset: 0; background: rgba(5, 6, 14, 0.85); z-index: -2; transition: opacity 1.5s ease 0.4s;
+}
+#preloader.hidden { visibility: hidden; pointer-events: none; }
+#preloader.hidden::before { opacity: 0; }
+
+.pl-cinematic-bar {
+  position: absolute; left: 0; width: 100%; height: 50vh; background: #020205; z-index: -1;
+  transition: transform 1.8s cubic-bezier(0.77, 0, 0.175, 1) 0.3s; box-shadow: 0 0 30px rgba(0,0,0,0.8);
+}
+.pl-cinematic-bar.top { top: 0; }
+.pl-cinematic-bar.bottom { bottom: 0; }
+#preloader.hidden .pl-cinematic-bar.top { transform: translateY(-100%); }
+#preloader.hidden .pl-cinematic-bar.bottom { transform: translateY(100%); }
+
+.preloader-inner {
+  position: absolute; inset: 0; z-index: 10;
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;
+}
+#preloader.hidden .preloader-inner { opacity: 0; transform: scale(1.5); filter: blur(20px); }
+
+#matrix-canvas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 10; }
+
+
+/* ===== GLOBAL 3D CANVAS ===== */
+#global-canvas { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }

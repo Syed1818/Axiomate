@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Axiomate Tech Services</title>
+  <meta name="description" content="Tell us about your project." />
+  <link rel="icon" type="image/png" href="/images/logo.png" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="/src/styles/style.css" />
+</head>
+
+<body>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="pl-cinematic-bar top"></div>
+    <div class="pl-cinematic-bar bottom"></div>
+    <div class="preloader-inner">
+      <!-- Intro Entry Button -->
+      <div id="pl-intro">
+        <button id="pl-enter-btn" class="magnetic-btn"><span>INITIALIZE SYSTEM</span></button>
+      </div>
+      
+      <!-- Hacker Boot Screen -->
+      <div id="pl-boot" class="hidden">
+        <canvas id="matrix-canvas"></canvas>
+        <div class="terminal-popup">
+          <div class="terminal-header">
+            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+            <span class="title">root@axiomate:~</span>
+          </div>
+          <div class="terminal-body">
+            <div id="terminal-output"></div>
+            <span class="terminal-cursor">_</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <canvas id="global-canvas"></canvas>
+  <div id="cursor-glow"></div>
+  <div id="cursor-dot"></div>
+
+  <nav id="navbar" class="navbar">
+    <div class="nav-container">
+      <a href="/index.html" class="nav-logo">
+        <img src="/images/logo.png" alt="Axiomate" class="logo-img" />
+        <span class="logo-text">Axiomate</span>
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="/index.html" class="nav-link">Home</a>
+        <a href="/index.html#services" class="nav-link">Services</a>
+        <a href="/about.html" class="nav-link">About</a>
+        <a href="/process.html" class="nav-link">Process</a>
+        <a href="/testimonials.html" class="nav-link">Clients</a>
+        <a href="/contact.html" class="nav-link">Contact</a>
+      </div>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+        </svg>
+        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2">
+          <circle cx="12" cy="12" r="5" />
+          <path
+            d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+        </svg>
+      </button>
+      <a href="/contact.html" class="nav-cta magnetic-btn"><span>Get Started</span></a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <section id="contact" class="section contact-hero-section">
+    <div class="container">
+      <div class="contact-grid contact-glass-panel">
+        <div class="contact-left">
+          <span class="section-tag reveal-up">// Let's Build</span>
+          <h2 class="section-title reveal-up">Ready to <span class="gradient-text">Launch?</span></h2>
+          <p class="contact-desc reveal-up">Tell us about your project and we'll get back within 24 hours.</p>
+          <div class="contact-info reveal-up">
+            <div class="contact-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.5">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg><span>hello@axiomate.tech</span></div>
+            <div class="contact-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.5">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg><span>+91 98765 43210</span></div>
+            <div class="contact-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.5">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg><span>Hyderabad, India</span></div>
+          </div>
+        </div>
+        <div class="contact-right">
+          <form class="contact-form" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="0de20464-1c60-4e7a-913a-94ab9b7fa17d">
+            <input type="hidden" name="subject" value="New Submission from Axiomate Website">
+
+            <div class="form-group"><input type="text" name="name" id="form-name" class="form-input" placeholder=" "
+                required /><label for="form-name" class="form-label">Your Name</label>
+              <div class="form-line"></div>
+            </div>
+            <div class="form-group"><input type="email" name="email" id="form-email" class="form-input" placeholder=" "
+                required /><label for="form-email" class="form-label">Email Address</label>
+              <div class="form-line"></div>
+            </div>
+            <div class="form-group"><select name="service" id="form-service" class="form-input form-select" required>
+                <option value="" disabled selected>Select a service</option>
+                <option value="web">Web Development</option>
+                <option value="ai">AI & Machine Learning</option>
+                <option value="mobile">Mobile Apps</option>
+                <option value="cloud">Cloud & DevOps</option>
+                <option value="data">Data Engineering</option>
+                <option value="security">Cybersecurity</option>
+              </select>
+              <div class="form-line"></div>
+            </div>
+            <div class="form-group"><textarea name="message" id="form-message" class="form-input form-textarea"
+                placeholder=" " rows="4" required></textarea><label for="form-message" class="form-label">Tell us about
+                your project</label>
+              <div class="form-line"></div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-submit magnetic-btn" id="form-submit"><span>Send
+                Message</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path d="M22 2L11 13" />
+                <path d="M22 2L15 22L11 13L2 9L22 2Z" />
+              </svg></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="footer" class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand"><img src="/images/logo.png" alt="Axiomate"
+            class="footer-logo-img" /><span class="footer-logo-text">Axiomate</span>
+          <p class="footer-tagline">Engineering Tomorrow's Technology</p>
+        </div>
+        <div class="footer-links-group">
+          <h4>Services</h4><a href="web-development.html">Web Development</a><a href="ai-ml.html">AI & ML</a><a
+            href="mobile-apps.html">Mobile Apps</a><a href="cloud-devops.html">Cloud & DevOps</a>
+        </div>
+        <div class="footer-links-group">
+          <h4>Company</h4><a href="/about.html">About Us</a><a href="/process.html">Our Process</a><a
+            href="/testimonials.html">Clients</a><a href="/contact.html">Contact</a>
+        </div>
+        <div class="footer-links-group">
+          <h4>Connect</h4><a href="https://linkedin.com" target="_blank">LinkedIn</a><a href="https://github.com"
+            target="_blank">GitHub</a><a href="https://twitter.com" target="_blank">Twitter / X</a><a
+            href="mailto:hello@axiomate.tech">Email Us</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Axiomate Tech Services. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clients & Testimonials | Axiomate Tech Services</title>
+  <meta name="description" content="Trusted by innovators." />
+  <link rel="icon"  href="images/logo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="src/styles/style.css" />
+</head>
+<body>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="pl-cinematic-bar top"></div>
+    <div class="pl-cinematic-bar bottom"></div>
+    <div class="preloader-inner">
+      <canvas id="matrix-canvas"></canvas>
+      <div id="caption-box">
+        <div class="caption-icon"></div>
+        <p id="caption-text"></p>
+      </div>
+    </div>
+  </div>
+  <canvas id="global-canvas"></canvas>
+  <div id="cursor-glow"></div><div id="cursor-dot"></div>
+
+  <axiomate-navbar></axiomate-navbar>
+
+  <section id="testimonials" class="section testimonials-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag reveal-up">// Client Stories</span>
+        <h2 class="section-title reveal-up">Trusted by <span class="gradient-text">Innovators</span></h2>
+      </div>
+      <div class="testimonials-track">
+        <div class="testimonial-card" data-tilt>
+          <div class="card-noise"></div>
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">Axiomate transformed our entire digital infrastructure. Their AI solutions reduced our operational costs by 40% in the first quarter.</p>
+          <div class="testimonial-author"><div class="author-avatar">RP</div><div><strong>Rajesh Patel</strong><br/><span class="author-role">CTO, FinovaBank</span></div></div>
+        </div>
+        <div class="testimonial-card" data-tilt>
+          <div class="card-noise"></div>
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">The custom LLM they built for our legal team is revolutionary. Document review that took days now takes minutes.</p>
+          <div class="testimonial-author"><div class="author-avatar">SM</div><div><strong>Sarah Mitchell</strong><br/><span class="author-role">VP Engineering, LexiCorp</span></div></div>
+        </div>
+        <div class="testimonial-card" data-tilt>
+          <div class="card-noise"></div>
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">From concept to launch in 8 weeks. A platform handling 10M+ daily requests without breaking a sweat.</p>
+          <div class="testimonial-author"><div class="author-avatar">AK</div><div><strong>Arjun Kumar</strong><br/><span class="author-role">Founder, ScaleMetrics</span></div></div>
+        </div>
+      </div>
+      <button id="enter-btn" class="enter-btn"><span>ENTER AXIOMATE</span></button>
+    </div>
+  </section>
+
+  <axiomate-footer></axiomate-footer>
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>

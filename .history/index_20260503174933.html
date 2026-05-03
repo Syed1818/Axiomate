@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Primary Meta Tags -->
+  <title>Axiomate — Tech Services | Engineering Tomorrow's Technology</title>
+  <meta name="title" content="Axiomate — Tech Services | Engineering Tomorrow's Technology" />
+  <meta name="description" content="Axiomate Tech Services delivers cutting-edge solutions from custom websites and enterprise mobile apps to personal LLMs and AI infrastructure." />
+  <meta name="keywords" content="Tech Services, Web Development, Custom LLM, AI, Machine Learning, Cloud Infrastructure, Mobile Apps" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://axiomate.in/" />
+  <meta property="og:title" content="Axiomate — Engineering Tomorrow's Technology" />
+  <meta property="og:description" content="End-to-end technology solutions engineered for scale, performance, and innovation." />
+  <meta property="og:image" content="https://axiomate.tech/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://axiomate.tech/" />
+  <meta property="twitter:title" content="Axiomate — Engineering Tomorrow's Technology" />
+  <meta property="twitter:description" content="End-to-end technology solutions engineered for scale, performance, and innovation." />
+  <meta property="twitter:image" content="https://axiomate.tech/og-image.jpg" />
+
+  <link rel="icon" type="image/png" href="/images/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="/src/styles/style.css" />
+</head>
+
+<body>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="pl-cinematic-bar top"></div>
+    <div class="pl-cinematic-bar bottom"></div>
+    <div class="preloader-inner">
+      <canvas id="matrix-canvas"></canvas>
+    </div>
+  </div>
+
+  <!-- GLOBAL 3D BACKGROUND (covers entire page) -->
+  <canvas id="global-canvas"></canvas>
+
+  <!-- Cursor follower -->
+  <div id="cursor-glow"></div>
+  <div id="cursor-dot"></div>
+
+  <!-- Navigation -->
+  <axiomate-navbar></axiomate-navbar>
+
+  <!-- Hero Section (Cinematic Centered) -->
+  <section id="hero" class="hero-section relative min-h-screen flex flex-col items-center justify-center overflow-hidden z-10 px-6 py-24 md:py-32 text-center">
+    <div class="hero-glow-orb"></div>
+    <div class="grid-background"></div>
+      
+      <h1 class="hero-title reveal-up text-[clamp(2.5rem,8vw,7rem)] font-bold leading-[1.1] md:leading-[0.95] tracking-tight mb-4 md:mb-6" id="hero-title">
+        <div class="title-line">Engineer <span class="gradient-text">Tomorrow.</span></div>
+      </h1>
+      <p class="hero-subtitle reveal-up text-base md:text-xl text-gray-400 max-w-2xl mx-auto mb-8 md:mb-10 leading-relaxed">
+        High-performance infrastructure, custom LLMs, and enterprise applications. Built for the ambitious.
+      </p>
+      
+      <div class="hero-buttons reveal-up flex flex-col md:flex-row flex-wrap justify-center gap-3 md:gap-4 mb-14 w-full md:w-auto">
+        <a href="/contact.html" class="btn-primary magnetic-btn inline-flex items-center justify-center gap-2 text-sm font-medium px-7 py-3.5 rounded-md bg-white text-black hover:-translate-y-0.5 hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] transition-all w-full md:w-auto">
+          <span>Deploy Project</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#services" class="btn-ghost magnetic-btn inline-flex items-center justify-center gap-2 text-sm font-medium px-7 py-3.5 rounded-md bg-transparent text-white border border-white/10 hover:bg-white/5 transition-all w-full md:w-auto">
+          <span>View Architecture</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Infinite Brand Ticker -->
+  <div class="brand-ticker">
+    <div class="ticker-track">
+      <span>TRUSTED BY ENTERPRISES</span> • <span>BUILT FOR SCALE</span> • <span>POWERED BY AI</span> • <span>ENGINEERED FOR PERFORMANCE</span> • <span>TRUSTED BY ENTERPRISES</span> • <span>BUILT FOR SCALE</span> • <span>POWERED BY AI</span> • <span>ENGINEERED FOR PERFORMANCE</span>
+    </div>
+  </div>
+
+  <!-- Services Section -->
+  <section id="services" class="services-section relative z-10 overflow-hidden py-20 md:py-32 bg-[#030408]/70">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16 md:mb-24">
+        <span class="reveal-up font-mono text-sm text-[#00d2ff] tracking-widest uppercase block mb-4">// What We Build</span>
+        <h2 class="reveal-up text-[clamp(2rem,5vw,3.2rem)] font-bold leading-tight mb-6">Full-Spectrum <span class="gradient-text">Tech Services</span></h2>
+        <p class="reveal-up text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">End-to-end technology solutions engineered for scale, performance, and
+          innovation.</p>
+      </div>
+      <div class="services-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 auto-rows-auto md:auto-rows-[minmax(240px,auto)] lg:auto-rows-[280px] gap-6">
+        <div class="service-card group md:col-span-2 md:row-span-2" id="service-web" data-tilt>
+          <div class="card-noise"></div>
+          <div class="card-border-glow"></div>
+          <div class="font-mono text-xs text-gray-500 mb-4 opacity-50">01</div>
+          <div class="service-icon w-12 h-12 rounded-lg bg-white/5 border border-white/5 flex items-center justify-center mb-6 text-white transition-all group-hover:bg-white/10 group-hover:text-[#00d2ff] group-hover:shadow-md"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.5">
+              <rect x="2" y="3" width="20" height="14" rx="2" />
+              <path d="M8 21h8M12 17v4" />
+            </svg></div>
+          <h3 class="text-xl font-medium mb-3 tracking-tight">Web Development</h3>
+          <p class="text-[0.95rem] text-gray-400 leading-relaxed mb-6">High-performance websites and web apps built with modern frameworks. From landing
+            pages to complex SaaS platforms.</p>
+          <div class="service-tags flex gap-1.5 flex-wrap"><span class="font-mono text-[0.7rem] px-2.5 py-1 bg-white/5 border border-white/5 rounded text-gray-400">React</span><span class="font-mono text-[0.7rem] px-2.5 py-1 bg-white/5 border border-white/5 rounded text-gray-400">Next.js</span><span class="font-mono text-[0.7rem] px-2.5 py-1 bg-white/5 border border-white/5 rounded text-gray-400">Vue</span></div>
+          <a href="web-development.html" class="absolute bottom-7 right-7 text-2xl text-[#00d2ff] opacity-0 -translate-x-3 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0">→</a>
+        </div>
+        <div class="service-card group md:col-span-2 md:row-span-1" id="service-ai" data-tilt>
+          <div class="card-noise"></div>
+          <div class="card-border-glow"></div>
+          <div class="font-mono text-xs text-gray-500 mb-4 opacity-50">02</div>
+          <div class="service-icon w-12 h-12 rounded-lg bg-white/5 border border-white/5 flex items-center justify-center mb-6 text-white transition-all group-hover:bg-white/10 group-hover:text-[#00d2ff] group-hover:shadow-md"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.5">
+              <circle cx="12" cy="12" r="3" />
+              <path
+                d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+            </svg></div>
+          <h3 class="text-xl font-medium mb-3 tracking-tight">AI & Machine Learning</h3>
+          <p class="text-[0.95rem] text-gray-400 leading-relaxed mb-6">Custom AI models, personal LLMs, intelligent chatbots, and ML pipelines tailored to
+            your domain.</p>
+          <div class="service-tags flex gap-1.5 flex-wrap"><span class="font-mono text-[0.7rem] px-2.5 py-1 bg-white/5 border border-white/5 rounded text-gray-400">LLMs</span><span class="font-mono text-[0.7rem] px-2.5 py-1 bg-white/5 border border-white/5 rounded text-gray-400">NLP</span><span class="font-mono text-[0.7rem] px-2.5 py-1 bg-white/5 border border-white/5 rounded text-gray-400">Vision</span></div>
+          <a href="ai-ml.html" class="absolute bottom-7 right-7 text-2xl text-[#00d2ff] opacity-0 -translate-x-3 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0">→</a>
+        </div>
+        <div class="service-card group col-span-1 row-span-1" id="service-mobile" data-tilt>
+          <div class="card-noise"></div>
+          <div class="card-border-glow"></div>
+          <div class="font-mono text-xs text-gray-500 mb-4 opacity-50">03</div>
+          <div class="service-icon w-12 h-12 rounded-lg bg-white/5 border border-white/5 flex items-center justify-center mb-6 text-white transition-all group-hover:bg-white/10 group-hover:text-[#00d2ff] group-hover:shadow-md"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.5">
+              <rect x="5" y="2" width="14" height="20" rx="2" />
+              <path d="M12 18h.01" />
+            </svg></div>
+          <h3 class="text-xl font-medium mb-3 tracking-tight">Mobile Apps</h3>
+          <p class="text-[0.95rem] text-gray-400 leading-relaxed mb-6">Cross-platform mobile applications with native performance.</p>
+          <div class="service-tags flex gap-1.5 flex-wrap"><span class="font-mono text-[0.7rem] px-2.5 py-1 bg-white/5 border border-white/5 rounded text-gray-400">React Native</span><span class="font-mono text-[0.7rem] px-2.5 py-1 bg-white/5 border border-white/5 rounded text-gray-400">Flutter</span></div>
+          <a href="mobile-apps.html" class="absolute bottom-7 right-7 text-2xl text-[#00d2ff] opacity-0 -translate-x-3 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0">→</a>
+        </div>
+        <div class="service-card group md:col-span-1 lg:row-span-2" id="service-cloud" data-tilt>
+          <div class="card-noise"></div>
+          <div class="card-border-glow"></div>
+          <div class="font-mono text-xs text-gray-500 mb-4 opacity-50">04</div>
+          <div class="service-icon w-12 h-12 rounded-lg bg-white/5 border border-white/5 flex items-center justify-center mb-6 text-white transition-all group-hover:bg-white/10 group-hover:text-[#00d2ff] group-hover:shadow-md"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.5">
+              <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" />
+            </svg></div>
+          <h3 class="text-xl font-medium mb-3 tracking-tight">Cloud & DevOps</h3>
+          <p class="text-[0.95rem] text-gray-400 leading-relaxed mb-6">Scalable cloud infrastructure, CI/CD, and container orchestration.</p>
+          <div class="service-tags flex gap-1.5 flex-wrap"><span class="font-mono text-[0.7rem] px-2.5 py-1 bg-white/5 border border-white/5 rounded text-gray-400">AWS</span><span class="font-mono text-[0.7rem] px-2.5 py-1 bg-white/5 border border-white/5 rounded text-gray-400">K8s</span></div>
+          <a href="cloud-devops.html" class="absolute bottom-7 right-7 text-2xl text-[#00d2ff] opacity-0 -translate-x-3 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0">→</a>
+        </div>
+        <div class="service-card group col-span-1 row-span-1" id="service-data" data-tilt>
+          <div class="card-noise"></div>
+          <div class="card-border-glow"></div>
+          <div class="font-mono text-xs text-gray-500 mb-4 opacity-50">05</div>
+          <div class="service-icon w-12 h-12 rounded-lg bg-white/5 border border-white/5 flex items-center justify-center mb-6 text-white transition-all group-hover:bg-white/10 group-hover:text-[#00d2ff] group-hover:shadow-md"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.5">
+              <ellipse cx="12" cy="5" rx="9" ry="3" />
+              <path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5" />
+              <path d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3" />
+            </svg></div>
+          <h3 class="text-xl font-medium mb-3 tracking-tight">Data Engineering</h3>
+          <p class="text-[0.95rem] text-gray-400 leading-relaxed mb-6">Data pipelines, warehousing, and real-time analytics platforms.</p>
+          <div class="service-tags flex gap-1.5 flex-wrap"><span class="font-mono text-[0.7rem] px-2.5 py-1 bg-white/5 border border-white/5 rounded text-gray-400">Spark</span><span class="font-mono text-[0.7rem] px-2.5 py-1 bg-white/5 border border-white/5 rounded text-gray-400">Kafka</span></div>
+        </div>
+        <div class="service-card group md:col-span-2 row-span-1" id="service-security" data-tilt>
+          <div class="card-noise"></div>
+          <div class="card-border-glow"></div>
+          <div class="font-mono text-xs text-gray-500 mb-4 opacity-50">06</div>
+          <div class="service-icon w-12 h-12 rounded-lg bg-white/5 border border-white/5 flex items-center justify-center mb-6 text-white transition-all group-hover:bg-white/10 group-hover:text-[#00d2ff] group-hover:shadow-md"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="1.5">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              <path d="M9 12l2 2 4-4" />
+            </svg></div>
+          <h3 class="text-xl font-medium mb-3 tracking-tight">Cybersecurity</h3>
+          <p class="text-[0.95rem] text-gray-400 leading-relaxed mb-6">Pentesting, audits, zero-trust architecture, and compliance.</p>
+          <div class="service-tags flex gap-1.5 flex-wrap"><span class="font-mono text-[0.7rem] px-2.5 py-1 bg-white/5 border border-white/5 rounded text-gray-400">SOC</span><span class="font-mono text-[0.7rem] px-2.5 py-1 bg-white/5 border border-white/5 rounded text-gray-400">Zero Trust</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about-section relative z-10 overflow-hidden py-20 md:py-32 bg-[#030408]/70">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="about-grid grid grid-cols-1 md:grid-cols-[1.1fr_0.9fr] gap-10 md:gap-16 items-center">
+        <div class="about-left">
+          <span class="reveal-up font-mono text-sm text-[#00d2ff] tracking-widest uppercase block mb-4">// Who We Are</span>
+          <h2 class="reveal-up text-[clamp(2rem,5vw,3.2rem)] font-bold leading-tight mb-6">We Don't Just Build Tech.<br /><span class="gradient-text">We Engineer the Future.</span></h2>
+          <p class="about-text reveal-up text-[1.05rem] text-gray-400 leading-relaxed mb-6">Axiomate is a team of engineers, architects, and innovators who believe technology should be a competitive weapon, not a bottleneck. We partner with businesses to design and deploy solutions that are <strong class="text-[#00d2ff] font-semibold">transformative</strong>.</p>
+          <div class="about-features reveal-up grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
+            <div class="about-feature flex items-center gap-3 text-sm text-gray-400">
+              <div class="feature-icon-wrap w-7 h-7 rounded-full bg-white/10 flex items-center justify-center text-[#00d2ff] shrink-0"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12" /></svg></div><span>Cutting-edge tech stack</span>
+            </div>
+            <div class="about-feature flex items-center gap-3 text-sm text-gray-400">
+              <div class="feature-icon-wrap w-7 h-7 rounded-full bg-white/10 flex items-center justify-center text-[#00d2ff] shrink-0"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12" /></svg></div><span>Agile & transparent process</span>
+            </div>
+            <div class="about-feature flex items-center gap-3 text-sm text-gray-400">
+              <div class="feature-icon-wrap w-7 h-7 rounded-full bg-white/10 flex items-center justify-center text-[#00d2ff] shrink-0"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12" /></svg></div><span>24/7 support & maintenance</span>
+            </div>
+            <div class="about-feature flex items-center gap-3 text-sm text-gray-400">
+              <div class="feature-icon-wrap w-7 h-7 rounded-full bg-white/10 flex items-center justify-center text-[#00d2ff] shrink-0"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12" /></svg></div><span>Enterprise-grade security</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-right">
+          <div class="stats-grid grid grid-cols-2 gap-4 md:gap-5">
+            <div class="stat-card p-6 md:p-8 text-center rounded-[20px] bg-[#121523]/45 border border-[#00d2ff]/20 backdrop-blur-[20px] transition-all duration-300 hover:-translate-y-1 hover:border-white/20" data-tilt>
+              <span class="stat-number counter text-4xl md:text-[2.8rem] font-bold text-[#00d2ff]" data-target="150">0</span><span class="stat-suffix text-2xl md:text-[1.6rem] font-bold text-[#00d2ff]">+</span><span class="stat-label block text-xs text-gray-500 mt-1.5 font-mono">Projects Shipped</span>
+            </div>
+            <div class="stat-card p-6 md:p-8 text-center rounded-[20px] bg-[#121523]/45 border border-[#00d2ff]/20 backdrop-blur-[20px] transition-all duration-300 hover:-translate-y-1 hover:border-white/20" data-tilt>
+              <span class="stat-number counter text-4xl md:text-[2.8rem] font-bold text-[#00d2ff]" data-target="50">0</span><span class="stat-suffix text-2xl md:text-[1.6rem] font-bold text-[#00d2ff]">+</span><span class="stat-label block text-xs text-gray-500 mt-1.5 font-mono">Enterprise Clients</span>
+            </div>
+            <div class="stat-card p-6 md:p-8 text-center rounded-[20px] bg-[#121523]/45 border border-[#00d2ff]/20 backdrop-blur-[20px] transition-all duration-300 hover:-translate-y-1 hover:border-white/20" data-tilt>
+              <span class="stat-number counter text-4xl md:text-[2.8rem] font-bold text-[#00d2ff]" data-target="99">0</span><span class="stat-suffix text-2xl md:text-[1.6rem] font-bold text-[#00d2ff]">.9%</span><span class="stat-label block text-xs text-gray-500 mt-1.5 font-mono">Uptime SLA</span>
+            </div>
+            <div class="stat-card p-6 md:p-8 text-center rounded-[20px] bg-[#121523]/45 border border-[#00d2ff]/20 backdrop-blur-[20px] transition-all duration-300 hover:-translate-y-1 hover:border-white/20" data-tilt>
+              <span class="stat-number counter text-4xl md:text-[2.8rem] font-bold text-[#00d2ff]" data-target="12">0</span><span class="stat-suffix text-2xl md:text-[1.6rem] font-bold text-[#00d2ff]">+</span><span class="stat-label block text-xs text-gray-500 mt-1.5 font-mono">Countries Served</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section (Vertical Timeline) -->
+  <section id="process" class="section process-section timeline-layout relative z-10 bg-[#030408]/70">
+    <div class="container">
+      <div class="section-header center">
+        <span class="section-tag reveal-up">// How We Work</span>
+        <h2 class="section-title reveal-up">Our <span class="gradient-text">Process</span></h2>
+        <p class="section-desc reveal-up">A battle-tested methodology that turns your vision into reality.</p>
+      </div>
+      
+      <div class="timeline-container">
+        <div class="timeline-line"></div>
+        
+        <div class="timeline-item reveal-up">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content" data-tilt>
+            <div class="card-border-glow"></div>
+            <div class="process-card-number">01</div>
+            <h3>Discovery & Strategy</h3>
+            <p>Deep dive into your goals, requirements, and user needs to define the optimal architecture.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item reveal-up right-align">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content" data-tilt>
+            <div class="card-border-glow"></div>
+            <div class="process-card-number">02</div>
+            <h3>Design & Prototype</h3>
+            <p>High-fidelity designs and interactive prototypes before a single line of code.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item reveal-up">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content" data-tilt>
+            <div class="card-border-glow"></div>
+            <div class="process-card-number">03</div>
+            <h3>Develop & Iterate</h3>
+            <p>Agile sprints with continuous delivery. Full transparency into every decision.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item reveal-up right-align">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content" data-tilt>
+            <div class="card-border-glow"></div>
+            <div class="process-card-number">04</div>
+            <h3>Deploy & Scale</h3>
+            <p>Production deployment with monitoring, optimization, and ongoing support.</p>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="section testimonials-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag reveal-up">// Client Stories</span>
+        <h2 class="section-title reveal-up">Trusted by <span class="gradient-text">Innovators</span></h2>
+      </div>
+      <div class="testimonials-track">
+        <div class="testimonial-card" data-tilt>
+          <div class="card-noise"></div>
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">Axiomate transformed our entire digital infrastructure. Their AI solutions reduced
+            our operational costs by 40% in the first quarter.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">RP</div>
+            <div><strong>Rajesh Patel</strong><br /><span class="author-role">CTO, FinovaBank</span></div>
+          </div>
+        </div>
+        <div class="testimonial-card" data-tilt>
+          <div class="card-noise"></div>
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">The custom LLM they built for our legal team is revolutionary. Document review
+            that took days now takes minutes.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">SM</div>
+            <div><strong>Sarah Mitchell</strong><br /><span class="author-role">VP Engineering, LexiCorp</span></div>
+          </div>
+        </div>
+        <div class="testimonial-card" data-tilt>
+          <div class="card-noise"></div>
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">From concept to launch in 8 weeks. A platform handling 10M+ daily requests without
+            breaking a sweat.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">AK</div>
+            <div><strong>Arjun Kumar</strong><br /><span class="author-role">Founder, ScaleMetrics</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <axiomate-footer></axiomate-footer>
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+
+</html>

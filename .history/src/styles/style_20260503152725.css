@@ -1,0 +1,36 @@
+@import './core.css';
+@import './layout.css';
+@import './pages.css';
+@import './effects.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* Scrolled Navbar State */
+  .navbar.scrolled { @apply bg-[#0a0c14]/80 backdrop-blur-md border-white/10 shadow-lg; }
+  [data-theme="light"] .navbar.scrolled { @apply bg-white/90 border-black/5 shadow-sm; }
+  
+  /* Dynamic Nav Link Colors */
+  .nav-link.active { @apply text-white; }
+  [data-theme="light"] .nav-link.active { @apply text-black; }
+  [data-theme="light"] .nav-link { @apply text-gray-600 hover:text-black; }
+  [data-theme="light"] .theme-toggle { @apply bg-black/5 border-black/10 hover:bg-black/10 text-black; }
+  [data-theme="light"] .nav-cta { @apply bg-[#0a0c14] text-white hover:shadow-xl; }
+  
+  /* Mobile Menu Open State */
+  .nav-links.open { @apply !flex flex-col absolute top-full left-0 w-full h-screen bg-[#0a0c14]/95 backdrop-blur-xl border-t border-white/10 p-8 items-start justify-start gap-8; }
+  [data-theme="light"] .nav-links.open { @apply bg-white/95 border-black/5; }
+  
+  /* Hamburger Animation */
+  .nav-toggle.active span:nth-child(1) { @apply rotate-45 translate-y-2; }
+  .nav-toggle.active span:nth-child(2) { @apply opacity-0; }
+  .nav-toggle.active span:nth-child(3) { @apply -rotate-45 -translate-y-2; }
+
+  /* Hero Section Light Mode Overrides */
+  [data-theme="light"] .cmd-palette { @apply bg-black/5 border-black/10 text-gray-700 shadow-sm; }
+  [data-theme="light"] .cmd-keys .key { @apply bg-black/10 text-gray-900; }
+  [data-theme="light"] .btn-primary { @apply bg-[#0a0c14] text-white hover:shadow-[0_8px_30px_rgba(0,0,0,0.15)]; }
+  [data-theme="light"] .btn-ghost { @apply text-[#0a0c14] border-black/20 hover:bg-black/5; }
+}

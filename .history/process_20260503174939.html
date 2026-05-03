@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Process | Axiomate Tech Services</title>
+  <meta name="description" content="A battle-tested methodology that turns your vision into reality." />
+  <link rel="icon" type="image/png" href="/images/logo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/styles/style.css" />
+</head>
+<body>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="pl-cinematic-bar top"></div>
+    <div class="pl-cinematic-bar bottom"></div>
+    <div class="preloader-inner">
+      <canvas id="matrix-canvas"></canvas>
+    </div>
+  </div>
+  <canvas id="global-canvas"></canvas>
+  <div id="cursor-glow"></div><div id="cursor-dot"></div>
+
+  <axiomate-navbar></axiomate-navbar>
+
+  <section id="process" class="section process-section relative z-10 bg-[#030408]/70">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag reveal-up">// How We Work</span>
+        <h2 class="section-title reveal-up">Our <span class="gradient-text">Process</span></h2>
+        <p class="section-desc reveal-up">A battle-tested methodology that turns your vision into reality.</p>
+      </div>
+      <div class="process-cards">
+        <div class="process-card" data-tilt>
+          <div class="card-noise"></div>
+          <div class="process-card-number">01</div>
+          <h3>Discovery & Strategy</h3>
+          <p>Deep dive into your goals, requirements, and user needs to define the optimal architecture.</p>
+          <div class="process-card-line"></div>
+        </div>
+        <div class="process-card" data-tilt>
+          <div class="card-noise"></div>
+          <div class="process-card-number">02</div>
+          <h3>Design & Prototype</h3>
+          <p>High-fidelity designs and interactive prototypes before a single line of code.</p>
+          <div class="process-card-line"></div>
+        </div>
+        <div class="process-card" data-tilt>
+          <div class="card-noise"></div>
+          <div class="process-card-number">03</div>
+          <h3>Develop & Iterate</h3>
+          <p>Agile sprints with continuous delivery. Full transparency into every decision.</p>
+          <div class="process-card-line"></div>
+        </div>
+        <div class="process-card" data-tilt>
+          <div class="card-noise"></div>
+          <div class="process-card-number">04</div>
+          <h3>Deploy & Scale</h3>
+          <p>Production deployment with monitoring, optimization, and ongoing support.</p>
+          <div class="process-card-line"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <axiomate-footer></axiomate-footer>
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>

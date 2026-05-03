@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web Development | Axiomate Tech Services</title>
+  <meta name="description" content="High-performance websites and web apps built with modern frameworks." />
+  <link rel="icon" type="image/png" href="/axiomate_logo_1777524479592.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/styles/style.css" />
+</head>
+<body>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="pl-cinematic-bar top"></div>
+    <div class="pl-cinematic-bar bottom"></div>
+    <div class="preloader-inner">
+      <!-- Intro Entry Button -->
+      <div id="pl-intro">
+        <button id="pl-enter-btn" class="magnetic-btn"><span>INITIALIZE SYSTEM</span></button>
+      </div>
+      
+      <!-- Hacker Boot Screen -->
+      <div id="pl-boot" class="hidden">
+        <canvas id="matrix-canvas"></canvas>
+        <div class="terminal-popup">
+          <div class="terminal-header">
+            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+            <span class="title">root@axiomate:~</span>
+          </div>
+          <div class="terminal-body">
+            <div id="terminal-output"></div>
+            <span class="terminal-cursor">_</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <canvas id="global-canvas"></canvas>
+  <div id="cursor-glow"></div><div id="cursor-dot"></div>
+
+  <nav id="navbar" class="navbar">
+    <div class="nav-container">
+      <a href="/index.html" class="nav-logo">
+        <img src="/axiomate_logo_1777524479592.png" alt="Axiomate" class="logo-img" />
+        <span class="logo-text">Axiomate</span>
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="/index.html" class="nav-link">Home</a>
+        <a href="/index.html#services" class="nav-link">Services</a>
+        <a href="/about.html" class="nav-link">About</a>
+        <a href="/process.html" class="nav-link">Process</a>
+        <a href="/testimonials.html" class="nav-link">Clients</a>
+        <a href="/contact.html" class="nav-link">Contact</a>
+      </div>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+        </svg>
+        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2">
+          <circle cx="12" cy="12" r="5" />
+          <path
+            d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+        </svg>
+      </button>
+      <a href="/contact.html" class="nav-cta magnetic-btn"><span>Get Started</span></a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <section id="services" class="section service-detail-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag reveal-up">// Service</span>
+        <h2 class="section-title reveal-up">Web <span class="gradient-text">Development</span></h2>
+        <p class="section-desc reveal-up">High-performance websites and web apps built with modern frameworks.</p>
+      </div>
+      <div class="service-detail-card">
+        <p class="about-text">Our web development services focus on creating seamless, interactive, and high-converting experiences. From fast, SEO-optimized landing pages to complex SaaS platforms, we use modern frameworks like React, Next.js, and Vue to deliver excellence.</p>
+        <div class="about-features">
+          <div class="about-feature"><div class="feature-icon-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div><span>Custom Web Apps</span></div>
+          <div class="about-feature"><div class="feature-icon-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div><span>E-Commerce Platforms</span></div>
+          <div class="about-feature"><div class="feature-icon-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div><span>CMS Integration</span></div>
+          <div class="about-feature"><div class="feature-icon-wrap"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div><span>Performance Optimization</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="footer" class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand"><img src="/axiomate_logo_1777524479592.png" alt="Axiomate" class="footer-logo-img" /><span class="footer-logo-text">Axiomate</span><p class="footer-tagline">Engineering Tomorrow's Technology</p></div>
+        <div class="footer-links-group">
+          <h4>Services</h4><a href="web-development.html">Web Development</a><a href="ai-ml.html">AI & ML</a><a
+            href="mobile-apps.html">Mobile Apps</a><a href="cloud-devops.html">Cloud & DevOps</a>
+        </div>
+        <div class="footer-links-group"><h4>Company</h4><a href="/about.html">About Us</a><a href="/process.html">Our Process</a><a href="/testimonials.html">Clients</a><a href="/contact.html">Contact</a></div>
+        <div class="footer-links-group">
+          <h4>Connect</h4><a href="https://linkedin.com" target="_blank">LinkedIn</a><a href="https://github.com"
+            target="_blank">GitHub</a><a href="https://twitter.com" target="_blank">Twitter / X</a><a
+            href="mailto:hello@axiomate.tech">Email Us</a>
+        </div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 Axiomate Tech Services. All rights reserved.</p></div>
+    </div>
+  </footer>
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>

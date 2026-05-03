@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spline Scroll Interactive</title>
+  <link rel="stylesheet" href="./style.css" />
+  <!-- Assuming Tailwind is configured in your Vite environment -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#050505] text-white antialiased overflow-x-hidden">
+
+  <!-- 3D Canvas fixed to the background -->
+  <canvas id="canvas3d"></canvas>
+
+  <!-- Loading Screen -->
+  <div id="loader" class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#050505]">
+    <div class="w-8 h-8 border-4 border-white/20 border-t-white rounded-full animate-spin mb-4"></div>
+    <p class="text-sm font-mono tracking-widest text-white/70 uppercase">Initializing Engine...</p>
+  </div>
+
+  <!-- Main Scrollable Content -->
+  <main id="main-content" class="relative z-10 opacity-0 transition-opacity duration-1000 pointer-events-none">
+    
+    <section id="hero" class="h-screen flex items-center justify-center border-b border-white/10">
+      <div class="text-center">
+        <h1 class="text-6xl md:text-8xl font-bold tracking-tighter mb-4">Spline & GSAP</h1>
+        <p class="text-xl text-white/60">Scroll to interact with the 3D scene.</p>
+      </div>
+    </section>
+
+    <section id="features" class="h-screen flex items-center justify-start px-10 md:px-32 border-b border-white/10">
+      <div class="max-w-xl">
+        <h2 class="text-5xl font-bold mb-6">Dynamic Features</h2>
+        <p class="text-lg text-white/70 leading-relaxed">As you scroll, the GSAP ScrollTrigger actively scrubs the timeline, manipulating the Spline object's rotation and position properties natively.</p>
+      </div>
+    </section>
+
+    <section id="process" class="h-screen flex items-center justify-end px-10 md:px-32 border-b border-white/10">
+      <div class="max-w-xl text-right">
+        <h2 class="text-5xl font-bold mb-6">The Process</h2>
+        <p class="text-lg text-white/70 leading-relaxed">Extracting the object by name allows us to bypass the Spline UI and take absolute programmatic control over the WebGL context.</p>
+      </div>
+    </section>
+
+    <section id="contact" class="h-screen flex flex-col items-center justify-center">
+      <h2 class="text-6xl font-bold mb-8">Ready to Launch?</h2>
+      <button class="px-8 py-4 bg-white text-black font-bold rounded-full hover:scale-105 transition-transform">Get Started</button>
+    </section>
+
+  </main>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Process | Axiomate Tech Services</title>
+  <meta name="description" content="A battle-tested methodology that turns your vision into reality." />
+  <link rel="icon" type="image/png" href="/images/logo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/styles/style.css" />
+</head>
+<body>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="pl-cinematic-bar top"></div>
+    <div class="pl-cinematic-bar bottom"></div>
+    <div class="preloader-inner">
+      <!-- Intro Entry Button -->
+      <div id="pl-intro">
+        <button id="pl-enter-btn" class="magnetic-btn"><span>INITIALIZE SYSTEM</span></button>
+      </div>
+      
+      <!-- Hacker Boot Screen -->
+      <div id="pl-boot" class="hidden">
+        <canvas id="matrix-canvas"></canvas>
+        <div class="terminal-popup">
+          <div class="terminal-header">
+            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+            <span class="title">root@axiomate:~</span>
+          </div>
+          <div class="terminal-body">
+            <div id="terminal-output"></div>
+            <span class="terminal-cursor">_</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <canvas id="global-canvas"></canvas>
+  <div id="cursor-glow"></div><div id="cursor-dot"></div>
+
+  <axiomate-navbar></axiomate-navbar>
+
+  <section id="process" class="section process-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag reveal-up">// How We Work</span>
+        <h2 class="section-title reveal-up">Our <span class="gradient-text">Process</span></h2>
+        <p class="section-desc reveal-up">A battle-tested methodology that turns your vision into reality.</p>
+      </div>
+      <div class="process-cards">
+        <div class="process-card" data-tilt>
+          <div class="card-noise"></div>
+          <div class="process-card-number">01</div>
+          <h3>Discovery & Strategy</h3>
+          <p>Deep dive into your goals, requirements, and user needs to define the optimal architecture.</p>
+          <div class="process-card-line"></div>
+        </div>
+        <div class="process-card" data-tilt>
+          <div class="card-noise"></div>
+          <div class="process-card-number">02</div>
+          <h3>Design & Prototype</h3>
+          <p>High-fidelity designs and interactive prototypes before a single line of code.</p>
+          <div class="process-card-line"></div>
+        </div>
+        <div class="process-card" data-tilt>
+          <div class="card-noise"></div>
+          <div class="process-card-number">03</div>
+          <h3>Develop & Iterate</h3>
+          <p>Agile sprints with continuous delivery. Full transparency into every decision.</p>
+          <div class="process-card-line"></div>
+        </div>
+        <div class="process-card" data-tilt>
+          <div class="card-noise"></div>
+          <div class="process-card-number">04</div>
+          <h3>Deploy & Scale</h3>
+          <p>Production deployment with monitoring, optimization, and ongoing support.</p>
+          <div class="process-card-line"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="footer" class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand"><img src="/images/logo.png" alt="Axiomate" class="footer-logo-img" /><span class="footer-logo-text">Axiomate</span><p class="footer-tagline">Engineering Tomorrow's Technology</p></div>
+        <div class="footer-links-group"><h4>Services</h4><a href="web-development.html">Web Development</a><a href="ai-ml.html">AI & ML</a><a href="mobile-apps.html">Mobile Apps</a><a href="cloud-devops.html">Cloud & DevOps</a></div>
+        <div class="footer-links-group"><h4>Company</h4><a href="/about.html">About Us</a><a href="/process.html">Our Process</a><a
+            href="/testimonials.html">Clients</a><a href="/contact.html">Contact</a></div>
+        <div class="footer-links-group">
+          <h4>Connect</h4><a href="https://linkedin.com" target="_blank">LinkedIn</a><a href="https://github.com"
+            target="_blank">GitHub</a><a href="https://twitter.com" target="_blank">Twitter / X</a><a
+            href="mailto:hello@axiomate.tech">Email Us</a>
+        </div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 Axiomate Tech Services. All rights reserved.</p></div>
+    </div>
+  </footer>
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>
