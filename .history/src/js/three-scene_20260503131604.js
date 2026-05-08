@@ -378,35 +378,6 @@ export function initGlobalScene(canvasId) {
   // Initial indicator
   updateSectionIndicator(SECTIONS[0].label, 0);
 
-  // ── Theme Sync ────────────────────────────────────────────────────────────
-  function updateThemeSettings(theme) {
-    const isLight = theme === 'light';
-    if (isLight) {
-      mat.blending = THREE.NormalBlending;
-      lineMat.blending = THREE.NormalBlending;
-      lineMat.opacity = 0.4;
-    } else {
-      mat.blending = THREE.AdditiveBlending;
-      lineMat.blending = THREE.AdditiveBlending;
-      lineMat.opacity = 0.18;
-    }
-    mat.needsUpdate = true;
-    lineMat.needsUpdate = true;
-
-    hudGroup.children.forEach(ring => {
-      ring.material.blending = isLight ? THREE.NormalBlending : THREE.AdditiveBlending;
-      ring.material.opacity = isLight ? 0.25 : 0.06;
-      ring.material.needsUpdate = true;
-    });
-  }
-
-  const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
-  updateThemeSettings(currentTheme);
-
-  window.addEventListener('theme-changed', (e) => {
-    updateThemeSettings(e.detail);
-  });
-
   // ── Resize ────────────────────────────────────────────────────────────────
   window.addEventListener('resize', () => {
     camera.aspect = window.innerWidth / window.innerHeight;
@@ -516,8 +487,7 @@ export function initGlobalScene(canvasId) {
     });
 
     // Opacity based on scroll (slight fade in middle of scroll)
-    const isLightMode = document.documentElement.getAttribute('data-theme') === 'light';
-    mat.opacity = (isLightMode ? 0.8 : 0.55) + s * 0.35;
+    mat.opacity = 0.55 + s * 0.35;
 
     renderer.render(scene, camera);
   }
