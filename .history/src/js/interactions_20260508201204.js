@@ -51,15 +51,10 @@ export function initThemeToggle() {
 
 export function initSpotlight() {
   document.body.addEventListener('mousemove', (e) => {
-    // Determine the current theme to project either a dark shadow or a light glow
-    const isLightMode = document.documentElement.getAttribute('data-theme') === 'light';
-    const spotlightColor = isLightMode ? 'rgba(0, 0, 0, 0.12)' : 'rgba(99, 102, 241, 0.1)';
-
     document.querySelectorAll('.service-card, .service-detail-card, .process-card, .about-grid, .contact-grid, .testimonial-card').forEach(card => {
       const rect = card.getBoundingClientRect();
       card.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
       card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
-      card.style.setProperty('--spotlight-color', spotlightColor);
     });
   });
 }
@@ -97,11 +92,6 @@ export function initCursorSystem() {
   if (window.innerWidth < 768) return;
   const glow = document.getElementById('cursor-glow'), dot = document.getElementById('cursor-dot');
   if (!glow || !dot) return;
-  
-  // Apply difference blend mode for the premium inverted contrast look
-  dot.style.mixBlendMode = 'difference';
-  dot.style.backgroundColor = '#ffffff'; // White difference inherently forces true inversion
-  
   let mx = 0, my = 0, gx = 0, gy = 0;
   document.addEventListener('mousemove', (e) => { mx = e.clientX; my = e.clientY; });
   function animateCursor() {
@@ -168,39 +158,4 @@ export function initActiveNavOnLoad() {
     const homeLink = document.querySelector('.nav-link[data-section="hero"]');
     if (homeLink) homeLink.classList.add('active');
   }
-}
-
-export function initProgressBar() {
-  const bar = document.createElement('div');
-  bar.id = 'scroll-progress-bar';
-  bar.style.cssText = `
-    position: fixed; top: 0; left: 0; width: 0%; height: 3px;
-    background: linear-gradient(90deg, #00d2ff, #3b82f6);
-    z-index: 9999; pointer-events: none;
-    transition: width 0.1s ease-out;
-  `;
-  document.body.appendChild(bar);
-
-  function updateProgress() {
-    const scrollTop = window.scrollY || document.documentElement.scrollTop;
-    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const progress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
-    bar.style.width = progress + '%';
-  }
-  
-  function updateTheme(theme) {
-    if (theme === 'light') {
-      bar.style.background = 'linear-gradient(90deg, #4338ca, #0369a1)'; // Deeper Indigo/Blue for light mode
-    } else {
-      bar.style.background = 'linear-gradient(90deg, #00d2ff, #3b82f6)'; // Bright Cyan/Blue for dark mode
-    }
-  }
-
-  const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
-  updateTheme(currentTheme);
-  window.addEventListener('theme-changed', (e) => updateTheme(e.detail));
-
-  window.addEventListener('scroll', updateProgress);
-  window.addEventListener('resize', updateProgress);
-  window.addEventListener('route-changed', () => setTimeout(updateProgress, 100));
 }

@@ -11,7 +11,7 @@ import {
   initThemeToggle, initMobileMenu, initCursorSystem,
   initTiltCards, initMagneticButtons, initSoundEffects,
   initSpotlight, initGlitchEffect, initActiveNavOnLoad,
-  initProgressBar
+  initNoiseOverlay
 } from './interactions.js';
 
 // Register GSAP Plugin
@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initGlitchEffect();
   initRouter();
   initFormHandler();
-  initProgressBar();
+  initNoiseOverlay();
 });
 
 // ===== SEAMLESS PAGE TRANSITIONS =====

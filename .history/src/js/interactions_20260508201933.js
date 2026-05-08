@@ -169,38 +169,3 @@ export function initActiveNavOnLoad() {
     if (homeLink) homeLink.classList.add('active');
   }
 }
-
-export function initProgressBar() {
-  const bar = document.createElement('div');
-  bar.id = 'scroll-progress-bar';
-  bar.style.cssText = `
-    position: fixed; top: 0; left: 0; width: 0%; height: 3px;
-    background: linear-gradient(90deg, #00d2ff, #3b82f6);
-    z-index: 9999; pointer-events: none;
-    transition: width 0.1s ease-out;
-  `;
-  document.body.appendChild(bar);
-
-  function updateProgress() {
-    const scrollTop = window.scrollY || document.documentElement.scrollTop;
-    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const progress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
-    bar.style.width = progress + '%';
-  }
-  
-  function updateTheme(theme) {
-    if (theme === 'light') {
-      bar.style.background = 'linear-gradient(90deg, #4338ca, #0369a1)'; // Deeper Indigo/Blue for light mode
-    } else {
-      bar.style.background = 'linear-gradient(90deg, #00d2ff, #3b82f6)'; // Bright Cyan/Blue for dark mode
-    }
-  }
-
-  const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
-  updateTheme(currentTheme);
-  window.addEventListener('theme-changed', (e) => updateTheme(e.detail));
-
-  window.addEventListener('scroll', updateProgress);
-  window.addEventListener('resize', updateProgress);
-  window.addEventListener('route-changed', () => setTimeout(updateProgress, 100));
-}

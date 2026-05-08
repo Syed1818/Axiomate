@@ -187,18 +187,6 @@ export function initProgressBar() {
     const progress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
     bar.style.width = progress + '%';
   }
-  
-  function updateTheme(theme) {
-    if (theme === 'light') {
-      bar.style.background = 'linear-gradient(90deg, #4338ca, #0369a1)'; // Deeper Indigo/Blue for light mode
-    } else {
-      bar.style.background = 'linear-gradient(90deg, #00d2ff, #3b82f6)'; // Bright Cyan/Blue for dark mode
-    }
-  }
-
-  const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
-  updateTheme(currentTheme);
-  window.addEventListener('theme-changed', (e) => updateTheme(e.detail));
 
   window.addEventListener('scroll', updateProgress);
   window.addEventListener('resize', updateProgress);

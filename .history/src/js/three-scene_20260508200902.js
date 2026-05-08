@@ -24,15 +24,6 @@ export function initGlobalScene(canvasId) {
     contact:  [new THREE.Color(0x6366f1), new THREE.Color(0xa855f7), new THREE.Color(0x10b981)],  // Purple / Indigo / Emerald
   };
 
-  const LIGHT_PALETTES = {
-    hero:     [new THREE.Color(0x0f172a), new THREE.Color(0x1e293b), new THREE.Color(0x020617)],  // Deep Slate / Navy / Black
-    services: [new THREE.Color(0x020617), new THREE.Color(0x0f172a), new THREE.Color(0x1e1b4b)],  // Black / Slate / Deep Violet
-    about:    [new THREE.Color(0x1c1917), new THREE.Color(0x0c0a09), new THREE.Color(0x292524)],  // Stone / Black
-    process:  [new THREE.Color(0x1e1b4b), new THREE.Color(0x020617), new THREE.Color(0x312e81)],  // Violet / Black
-    clients:  [new THREE.Color(0x022c22), new THREE.Color(0x064e3b), new THREE.Color(0x020617)],  // Emerald / Black
-    contact:  [new THREE.Color(0x0f172a), new THREE.Color(0x020617), new THREE.Color(0x1e293b)],  // Slate / Black
-  };
-
   // ── Particle system ─────────────────────────────────────────────────────────
   const COUNT = 2200;
   const positions  = new Float32Array(COUNT * 3);
@@ -333,11 +324,6 @@ export function initGlobalScene(canvasId) {
 
   // ── Section Indicator DOM element ─────────────────────────────────────────
   function updateSectionIndicator(label, idx) {
-    const isLightMode = document.documentElement.getAttribute('data-theme') === 'light';
-    const activeBg = isLightMode ? 'rgba(0,0,0,0.85)' : 'rgba(255,255,255,0.85)';
-    const inactiveBg = isLightMode ? 'rgba(0,0,0,0.2)' : 'rgba(255,255,255,0.2)';
-    const labelColor = isLightMode ? 'rgba(0,0,0,0.5)' : 'rgba(255,255,255,0.4)';
-
     let el = document.getElementById('scroll-section-indicator');
     if (!el) {
       el = document.createElement('div');
@@ -354,7 +340,7 @@ export function initGlobalScene(canvasId) {
         dot.className = 'si-dot';
         dot.style.cssText = `
           width: 6px; height: 6px; border-radius: 50%;
-          background: ${inactiveBg}; transition: all 0.4s ease;
+          background: rgba(255,255,255,0.25); transition: all 0.4s ease;
           position: relative;
         `;
         el.appendChild(dot);
@@ -366,7 +352,7 @@ export function initGlobalScene(canvasId) {
         position: fixed; right: 52px; top: 50%;
         font-family: 'JetBrains Mono', monospace; font-size: 0.65rem;
         letter-spacing: 2px; text-transform: uppercase;
-        color: ${labelColor}; transform: translateY(-50%) rotate(-90deg);
+        color: rgba(255,255,255,0.4); transform: translateY(-50%) rotate(-90deg);
         transform-origin: center; white-space: nowrap; pointer-events: none;
         z-index: 100; transition: opacity 0.4s;
       `;
@@ -377,12 +363,11 @@ export function initGlobalScene(canvasId) {
     dots.forEach((d, i) => {
       d.style.width  = i === idx ? '10px' : '6px';
       d.style.height = i === idx ? '10px' : '6px';
-      d.style.background = i === idx ? activeBg : inactiveBg;
+      d.style.background = i === idx ? 'rgba(255,255,255,0.85)' : 'rgba(255,255,255,0.2)';
     });
 
     const lbl = document.getElementById('si-label');
     if (lbl) {
-      lbl.style.color = labelColor;
       lbl.style.opacity = '0';
       setTimeout(() => {
         lbl.textContent = label;
@@ -399,13 +384,11 @@ export function initGlobalScene(canvasId) {
     if (isLight) {
       mat.blending = THREE.NormalBlending;
       lineMat.blending = THREE.NormalBlending;
-      lineMat.opacity = 0.25;
-      mat.size = 2.0; // Bolder particles to mimic a solid architectural structure
+      lineMat.opacity = 0.4;
     } else {
       mat.blending = THREE.AdditiveBlending;
       lineMat.blending = THREE.AdditiveBlending;
       lineMat.opacity = 0.18;
-      mat.size = 1.4; // Finer particles for the glowing holographic look
     }
     mat.needsUpdate = true;
     lineMat.needsUpdate = true;
@@ -427,9 +410,6 @@ export function initGlobalScene(canvasId) {
       ring.material.opacity = isLight ? 0.25 : 0.06;
       ring.material.needsUpdate = true;
     });
-
-    // Refresh the scroll indicator to apply the new theme colors
-    updateSectionIndicator(SECTIONS[currentSectionIndex].label, currentSectionIndex);
   }
 
   const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
@@ -549,7 +529,7 @@ export function initGlobalScene(canvasId) {
 
     // Opacity based on scroll (slight fade in middle of scroll)
     const isLightMode = document.documentElement.getAttribute('data-theme') === 'light';
-    mat.opacity = isLightMode ? 0.95 : 0.55 + s * 0.35; // Remain solid in light mode
+    mat.opacity = (isLightMode ? 0.8 : 0.55) + s * 0.35;
 
     renderer.render(scene, camera);
   }

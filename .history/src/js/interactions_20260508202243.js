@@ -170,37 +170,25 @@ export function initActiveNavOnLoad() {
   }
 }
 
-export function initProgressBar() {
-  const bar = document.createElement('div');
-  bar.id = 'scroll-progress-bar';
-  bar.style.cssText = `
-    position: fixed; top: 0; left: 0; width: 0%; height: 3px;
-    background: linear-gradient(90deg, #00d2ff, #3b82f6);
-    z-index: 9999; pointer-events: none;
-    transition: width 0.1s ease-out;
+export function initNoiseOverlay() {
+  const noise = document.createElement('div');
+  noise.id = 'theme-noise-overlay';
+  // High z-index but pointer-events: none ensures it textures the whole page without blocking clicks
+  noise.style.cssText = `
+    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    pointer-events: none; z-index: 9999; opacity: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    transition: opacity 0.5s ease;
   `;
-  document.body.appendChild(bar);
+  document.body.appendChild(noise);
 
-  function updateProgress() {
-    const scrollTop = window.scrollY || document.documentElement.scrollTop;
-    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const progress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
-    bar.style.width = progress + '%';
+  function updateNoise(theme) {
+    // Give light mode a 5% opacity grain, dark mode gets a 2% grain
+    noise.style.opacity = theme === 'light' ? '0.05' : '0.02';
   }
   
-  function updateTheme(theme) {
-    if (theme === 'light') {
-      bar.style.background = 'linear-gradient(90deg, #4338ca, #0369a1)'; // Deeper Indigo/Blue for light mode
-    } else {
-      bar.style.background = 'linear-gradient(90deg, #00d2ff, #3b82f6)'; // Bright Cyan/Blue for dark mode
-    }
-  }
-
   const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
-  updateTheme(currentTheme);
-  window.addEventListener('theme-changed', (e) => updateTheme(e.detail));
+  updateNoise(currentTheme);
 
-  window.addEventListener('scroll', updateProgress);
-  window.addEventListener('resize', updateProgress);
-  window.addEventListener('route-changed', () => setTimeout(updateProgress, 100));
+  window.addEventListener('theme-changed', (e) => updateNoise(e.detail));
 }

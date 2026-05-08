@@ -24,15 +24,6 @@ export function initGlobalScene(canvasId) {
     contact:  [new THREE.Color(0x6366f1), new THREE.Color(0xa855f7), new THREE.Color(0x10b981)],  // Purple / Indigo / Emerald
   };
 
-  const LIGHT_PALETTES = {
-    hero:     [new THREE.Color(0x0f172a), new THREE.Color(0x1e293b), new THREE.Color(0x020617)],  // Deep Slate / Navy / Black
-    services: [new THREE.Color(0x020617), new THREE.Color(0x0f172a), new THREE.Color(0x1e1b4b)],  // Black / Slate / Deep Violet
-    about:    [new THREE.Color(0x1c1917), new THREE.Color(0x0c0a09), new THREE.Color(0x292524)],  // Stone / Black
-    process:  [new THREE.Color(0x1e1b4b), new THREE.Color(0x020617), new THREE.Color(0x312e81)],  // Violet / Black
-    clients:  [new THREE.Color(0x022c22), new THREE.Color(0x064e3b), new THREE.Color(0x020617)],  // Emerald / Black
-    contact:  [new THREE.Color(0x0f172a), new THREE.Color(0x020617), new THREE.Color(0x1e293b)],  // Slate / Black
-  };
-
   // ── Particle system ─────────────────────────────────────────────────────────
   const COUNT = 2200;
   const positions  = new Float32Array(COUNT * 3);
@@ -399,13 +390,11 @@ export function initGlobalScene(canvasId) {
     if (isLight) {
       mat.blending = THREE.NormalBlending;
       lineMat.blending = THREE.NormalBlending;
-      lineMat.opacity = 0.25;
-      mat.size = 2.0; // Bolder particles to mimic a solid architectural structure
+      lineMat.opacity = 0.4;
     } else {
       mat.blending = THREE.AdditiveBlending;
       lineMat.blending = THREE.AdditiveBlending;
       lineMat.opacity = 0.18;
-      mat.size = 1.4; // Finer particles for the glowing holographic look
     }
     mat.needsUpdate = true;
     lineMat.needsUpdate = true;
@@ -549,7 +538,7 @@ export function initGlobalScene(canvasId) {
 
     // Opacity based on scroll (slight fade in middle of scroll)
     const isLightMode = document.documentElement.getAttribute('data-theme') === 'light';
-    mat.opacity = isLightMode ? 0.95 : 0.55 + s * 0.35; // Remain solid in light mode
+    mat.opacity = (isLightMode ? 0.8 : 0.55) + s * 0.35;
 
     renderer.render(scene, camera);
   }
